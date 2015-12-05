@@ -104,6 +104,8 @@ bool Initialize(size_t argc, LPCTSTR* argv)
 		("texture-size-multiple", boost::program_options::value<unsigned>(&OPT::nTextureSizeMultiple)->default_value(0), "texture size should be a multiple of this value (0 - power of two)")
 		("patch-packing-heuristic", boost::program_options::value<unsigned>(&OPT::nRectPackingHeuristic)->default_value(3), "specify the heuristic used when deciding where to place a new patch (0 - best fit, 3 - good speed, 100 - best speed)")
 		("empty-color", boost::program_options::value<uint32_t>(&OPT::nColEmpty)->default_value(0x00FF7F27), "color used for faces not covered by any image")
+		("file-extension-type,e", boost::program_options::value<unsigned>(&OPT::nOutputFileExtensionType)->default_value(0), "output file extension (0-ply, 1-obj)")
+		
 		;
 
 	// hidden options, allowed both on command line and
@@ -220,10 +222,16 @@ int main(int argc, LPCTSTR* argv)
 	// save the final mesh
 	const String baseFileName(MAKE_PATH_SAFE(Util::getFullFileName(OPT::strOutputFileName) + _T("_texture")));
 	scene.Save(baseFileName+_T(".mvs"), (ARCHIVE_TYPE)OPT::nArchiveType);
-	scene.mesh.Save(baseFileName+_T(".ply"));
+	if (OPT::nOutputFileExtensionType == 0) {
+		scene.mesh.Save(baseFileName+_T(".ply"));
+	}
+	else {
+		scene.mesh.Save(baseFileName+_T(".obj"));
+	}
 	#if TD_VERBOSE != TD_VERBOSE_OFF
-	if (VERBOSITY_LEVEL > 2)
-		scene.ExportCamerasMLP(baseFileName+_T(".mlp"), baseFileName+_T(".ply"));
+	if (VERBOSITY_LEVEL > 2) {
+		scene.ExportCamerasMLP(baseFileName+_T(".mlp"),  baseFileName+ (OPT::nOutputFileExtensionType == 0 ? _T(".ply"): _T(".obj")));
+	}
 	#endif
 
 	Finalize();
