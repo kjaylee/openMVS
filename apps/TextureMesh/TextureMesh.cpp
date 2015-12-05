@@ -56,6 +56,7 @@ bool bLocalSeamLeveling;
 unsigned nTextureSizeMultiple;
 unsigned nRectPackingHeuristic;
 uint32_t nColEmpty;
+unsigned nOutputFileExtensionType;
 unsigned nArchiveType;
 int nProcessPriority;
 unsigned nMaxThreads;
