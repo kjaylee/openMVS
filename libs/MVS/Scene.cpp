@@ -44,17 +44,27 @@ using namespace MVS;
 
 // S T R U C T S ///////////////////////////////////////////////////
 
+void Scene::Release()
+{
+	platforms.Release();
+	images.Release();
+	pointcloud.Release();
+	mesh.Release();
+}
+
+
 bool Scene::LoadInterface(const String & fileName)
 {
+	TD_TIMER_STARTD();
 	Interface obj;
 
-	#ifdef _USE_BOOST
 	// serialize in the current state
+	#if defined(_USE_CUSTOM_ARCHIVE)
+	if (!ARCHIVE::SerializeLoad(obj, fileName))
+	#elif defined(_USE_BOOST)
 	if (!SerializeLoad(obj, fileName, ARCHIVE_BINARY_ZIP))
-		return false;
-	#else
-	return false;
 	#endif
+		return false;
 
 	// import platforms and cameras
 	ASSERT(!obj.platforms.empty());
@@ -85,6 +95,7 @@ bool Scene::LoadInterface(const String & fileName)
 
 	// import images
 	nCalibratedImages = 0;
+	size_t nTotalPixels(0);
 	ASSERT(!obj.images.empty());
 	images.Reserve((uint32_t)obj.images.size());
 	for (Interface::ImageArr::const_iterator it=obj.images.begin(); it!=obj.images.end(); ++it) {
@@ -95,8 +106,10 @@ bool Scene::LoadInterface(const String & fileName)
 		Util::ensureUnifySlash(imageData.name);
 		imageData.name = MAKE_PATH_FULL(WORKING_FOLDER_FULL, imageData.name);
 		imageData.poseID = image.poseID;
-		if (imageData.poseID == NO_ID)
+		if (imageData.poseID == NO_ID) {
+			DEBUG_EXTRA("warning: uncalibrated image '%s'", image.name.c_str());
 			continue;
+		}
 		imageData.platformID = image.platformID;
 		imageData.cameraID = image.cameraID;
 		#if 1
@@ -109,6 +122,7 @@ bool Scene::LoadInterface(const String & fileName)
 		imageData.camera.ComposeP();
 		#endif
 		++nCalibratedImages;
+		nTotalPixels += imageData.width * imageData.height;
 		DEBUG_EXTRA("Image loaded %3u: %s", ID, Util::getFileFullName(imageData.name).c_str());
 	}
 	if (images.GetSize() < 2)
@@ -153,11 +167,19 @@ bool Scene::LoadInterface(const String & fileName)
 			pointcloud.colors.CopyOf((const Pixel8U*)&obj.verticesColor[0].c, obj.vertices.size());
 		}
 	}
+
+	DEBUG_EXTRA("Scene loaded from interface format (%s):\n"
+				"\t%u images (%u calibrated) with a total of %.2f MPixels (%.2f MPixels/image)\n"
+				"\t%u points, %u vertices, %u faces",
+				TD_TIMER_GET_FMT().c_str(),
+				images.GetSize(), nCalibratedImages, (double)nTotalPixels/(1024.0*1024.0), (double)nTotalPixels/(1024.0*1024.0*nCalibratedImages),
+				pointcloud.points.GetSize(), mesh.vertices.GetSize(), mesh.faces.GetSize());
 	return true;
 } // LoadInterface
 
 bool Scene::SaveInterface(const String & fileName) const
 {
+	TD_TIMER_STARTD();
 	Interface obj;
 
 	// export platforms
@@ -228,17 +250,29 @@ bool Scene::SaveInterface(const String & fileName) const
 		}
 	}
 
-	#ifdef _USE_BOOST
 	// serialize out the current state
-	return SerializeSave(obj, fileName, ARCHIVE_BINARY_ZIP);
-	#else
-	return false;
+	#if defined(_USE_CUSTOM_ARCHIVE)
+	if (!ARCHIVE::SerializeSave(obj, fileName))
+	#elif defined(_USE_BOOST)
+	if (!SerializeSave(obj, fileName, ARCHIVE_BINARY_ZIP))
 	#endif
+		return false;
+
+	DEBUG_EXTRA("Scene saved to interface format (%s):\n"
+				"\t%u images (%u calibrated)\n"
+				"\t%u points, %u vertices, %u faces",
+				TD_TIMER_GET_FMT().c_str(),
+				images.GetSize(), nCalibratedImages,
+				pointcloud.points.GetSize(), mesh.vertices.GetSize(), mesh.faces.GetSize());
+	return true;
 } // SaveInterface
 /*----------------------------------------------------------------*/
 
 bool Scene::Load(const String& fileName)
 {
+	TD_TIMER_STARTD();
+	Release();
+
 	#ifdef _USE_BOOST
 	// open the input stream
 	std::ifstream fs(fileName, std::ios::in | std::ios::binary);
@@ -272,13 +306,21 @@ bool Scene::Load(const String& fileName)
 		return false;
 	// init images
 	nCalibratedImages = 0;
+	size_t nTotalPixels(0);
 	FOREACH(ID, images) {
 		Image& imageData = images[ID];
 		if (imageData.poseID == NO_ID)
 			continue;
 		imageData.UpdateCamera(platforms);
 		++nCalibratedImages;
+		nTotalPixels += imageData.width * imageData.height;
 	}
+	DEBUG_EXTRA("Scene loaded (%s):\n"
+				"\t%u images (%u calibrated) with a total of %.2f MPixels (%.2f MPixels/image)\n"
+				"\t%u points, %u vertices, %u faces",
+				TD_TIMER_GET_FMT().c_str(),
+				images.GetSize(), nCalibratedImages, (double)nTotalPixels/(1024.0*1024.0), (double)nTotalPixels/(1024.0*1024.0*nCalibratedImages),
+				pointcloud.points.GetSize(), mesh.vertices.GetSize(), mesh.faces.GetSize());
 	return true;
 	#else
 	return false;
@@ -287,6 +329,7 @@ bool Scene::Load(const String& fileName)
 
 bool Scene::Save(const String& fileName, ARCHIVE_TYPE type) const
 {
+	TD_TIMER_STARTD();
 	#ifdef _USE_BOOST
 	// open the output stream
 	std::ofstream fs(fileName, std::ios::out | std::ios::binary);
@@ -304,7 +347,15 @@ bool Scene::Save(const String& fileName, ARCHIVE_TYPE type) const
 	const uint64_t nReserved = 0;
 	fs.write((const char*)&nReserved, sizeof(uint64_t));
 	// serialize out the current state
-	return SerializeSave(*this, fs, type);
+	if (!SerializeSave(*this, fs, type))
+		return false;
+	DEBUG_EXTRA("Scene saved (%s):\n"
+				"\t%u images (%u calibrated)\n"
+				"\t%u points, %u vertices, %u faces",
+				TD_TIMER_GET_FMT().c_str(),
+				images.GetSize(), nCalibratedImages,
+				pointcloud.points.GetSize(), mesh.vertices.GetSize(), mesh.faces.GetSize());
+	return true;
 	#else
 	return false;
 	#endif

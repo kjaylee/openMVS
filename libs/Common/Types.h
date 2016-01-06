@@ -53,6 +53,7 @@
 #include <list>
 #include <queue>
 #include <deque>
+#include <iterator>
 #include <cmath>
 #include <ctime>
 #ifdef _USE_OPENMP
@@ -1232,10 +1233,18 @@ inline float  ZEROTOLERANCE()				{ return FZERO_TOLERANCE; }
 template<>
 inline double ZEROTOLERANCE()				{ return ZERO_TOLERANCE; }
 
+template<typename _Tp>
+inline bool   ISZERO(_Tp  x)				{ return x == _Tp(0); }
+template<>
 inline bool   ISZERO(float  x)				{ return Float(x).IsZero(); }
+template<>
 inline bool   ISZERO(double x)				{ return ABS(x) < ZERO_TOLERANCE; }
 
+template<typename _Tp>
+inline bool   ISEQUAL(_Tp  x, _Tp  v)		{ return x == v; }
+template<>
 inline bool   ISEQUAL(float  x, float  v)	{ return Float(x).IsEqual(v); }
+template<>
 inline bool   ISEQUAL(double x, double v)	{ return ABS(x-v) < ZERO_TOLERANCE; }
 
 inline float  INVZERO(float)				{ return FINV_ZERO; }
@@ -2156,7 +2165,7 @@ public:
 		data = new Type[length()];
 	}
 	inline void create(const Size& sz) { create(sz.height, sz.width); }
-	inline void release() { if (data) { delete[] data; data = NULL; } }
+	inline void release() { delete[] data; data = NULL; }
 	inline void memset(uint8_t v) { ASSERT(!empty()); ::memset(data, v, sizeof(Type)*length()); }
 	inline void swap(TBitMatrix& m) {
 		union {int i; Type* d;} tmp;
@@ -2252,6 +2261,7 @@ public:
 #ifdef _USE_BOOST
 protected:
 	// implement BOOST serialization
+	friend class boost::serialization::access;
 	template<class Archive>
 	void save(Archive& ar, const unsigned int /*version*/) const {
 		if (empty()) {
@@ -2261,17 +2271,17 @@ protected:
 		}
 		ar & cols;
 		ar & rows;
-		ar & boost::serialization::make_array(data, sizeof(Type)*length());
+		ar & boost::serialization::make_array(data, length());
 	}
 	template<class Archive>
 	void load(Archive& ar, const unsigned int /*version*/) {
+		release();
 		ar & cols;
-		if (cols == 0) {
-			data = NULL;
+		if (cols == 0)
 			return;
-		}
 		ar & rows;
-		ar & boost::serialization::make_array(data, sizeof(Type)*length());
+		create(rows, cols);
+		ar & boost::serialization::make_array(data, length());
 	}
 	BOOST_SERIALIZATION_SPLIT_MEMBER()
 #endif
@@ -2696,6 +2706,7 @@ protected:
 
 #include "Types.inl"
 #include "Rotation.h"
+#include "Sphere.h"
 #include "AABB.h"
 #include "OBB.h"
 #include "Plane.h"

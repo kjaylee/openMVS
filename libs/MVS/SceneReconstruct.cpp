@@ -363,7 +363,7 @@ inline bool checkPointInside(const point_t& a, const point_t& b, const point_t& 
 // find all facets on the convex-hull and inside the camera frustum,
 // else return all four cell's facets
 template <int FacetOrientation>
-void fetchCellFacets(const delaunay_t& Tr, const cell_handle_t& cell, const Image& imageData, std::vector<facet_t>& facets)
+void fetchCellFacets(const delaunay_t& Tr, const std::vector<facet_t>& hullFacets, const cell_handle_t& cell, const Image& imageData, std::vector<facet_t>& facets)
 {
 	if (!Tr.is_infinite(cell)) {
 		// store all 4 facets of the cell
@@ -376,55 +376,23 @@ void fetchCellFacets(const delaunay_t& Tr, const cell_handle_t& cell, const Imag
 	}
 	// find all facets on the convex-hull in camera's view
 	// create the 4 frustum planes
-	const Camera& camera(imageData.camera);
-	const Point2 size(imageData.GetSize());
-	const point_t ptOrigin(MVS2CGAL(camera.C));
-	const point_t ptUpLeft(MVS2CGAL(camera.TransformPointI2W(Point3(REAL(0), REAL(0), REAL(1)))));
-	const point_t ptUpRight(MVS2CGAL(camera.TransformPointI2W(Point3(size.x, REAL(0), REAL(1)))));
-	const point_t ptBottomRight(MVS2CGAL(camera.TransformPointI2W(Point3(size.x, size.y, REAL(1)))));
-	const point_t ptBottomLeft(MVS2CGAL(camera.TransformPointI2W(Point3(REAL(0), size.y, REAL(1)))));
-	ASSERT(checkPointInside(ptUpLeft, ptUpRight, ptBottomRight, ptBottomLeft, ptOrigin, MVS2CGAL(camera.TransformPointC2W(Point3(REAL(0), REAL(0), REAL(1))))));
-	// initialize array with the only face of the given cell that does not contain the infinite vertex
 	ASSERT(facets.empty());
-	for (int i=0; i<4; ++i) {
-		const facet_t f(cell, i);
-		if (!Tr.is_infinite(f)) {
-			facets.push_back(f);
-			break;
-		}
+	typedef TFrustum<REAL,4> Frustum;
+	Frustum frustum(imageData.camera.P, imageData.width, imageData.width, 0, 1);
+	// loop over all cells
+	const point_t ptOrigin(MVS2CGAL(imageData.camera.C));
+	for (const facet_t& face: hullFacets) {
+		// add face if visible
+		const triangle_t verts(Tr.triangle(face));
+		if (orientation(verts[0], verts[1], verts[2], ptOrigin) != FacetOrientation)
+			continue;
+		AABB3 ab(CGAL2MVS<REAL>(verts[0]));
+		for (int i=1; i<3; ++i)
+			ab.Insert(CGAL2MVS<REAL>(verts[i]));
+		if (frustum.Classify(ab) == CULLED)
+			continue;
+		facets.push_back(face);
 	}
-	ASSERT(!facets.empty());
-	std::unordered_set<void*> seen;
-	seen.insert(cell.for_compact_container());
-	// add adjacent facets as long as they are in view
-	size_t idx(0);
-	do {
-		const facet_t f(facets[idx]);
-		for (int e=1; e<=3; ++e) {
-			const delaunay_t::Cell_circulator efc(Tr.incident_cells(f.first, f.second, (f.second+e)%4));
-			delaunay_t::Cell_circulator ifc(efc);
-			do {
-				const cell_handle_t c(ifc);
-				ASSERT(Tr.is_infinite(c));
-				if (!seen.insert(c.for_compact_container()).second)
-					continue;
-				int i(0);
-				do {
-					const facet_t f(c, i);
-					if (!Tr.is_infinite(f)) {
-						const triangle_t verts(Tr.triangle(f));
-						if (orientation(verts[0], verts[1], verts[2], ptOrigin) == FacetOrientation &&
-							(checkPointInside(ptUpLeft, ptUpRight, ptBottomRight, ptBottomLeft, ptOrigin, verts[0]) ||
-							 checkPointInside(ptUpLeft, ptUpRight, ptBottomRight, ptBottomLeft, ptOrigin, verts[1]) ||
-							 checkPointInside(ptUpLeft, ptUpRight, ptBottomRight, ptBottomLeft, ptOrigin, verts[2])))
-							facets.push_back(f);
-						break;
-					}
-				} while (++i < 4);
-				ASSERT(i < 4);
-			} while (++ifc != efc);
-		}
-	} while (++idx < facets.size());
 }
 
 
@@ -733,48 +701,50 @@ edge_cap_t freeSpaceSupport(const delaunay_t& Tr, const std::vector<cell_info_t>
 }
 
 
+// Fetch the triangle formed by the facet vertices,
+// making sure the facet orientation is kept (as in CGAL::Triangulation_3::triangle())
+// return the vertex handles of the triangle
+struct triangle_vhandles_t {
+	vertex_handle_t verts[3];
+	triangle_vhandles_t() {}
+	triangle_vhandles_t(vertex_handle_t _v0, vertex_handle_t _v1, vertex_handle_t _v2)
+		#ifdef _SUPPORT_CPP11
+		: verts{_v0,_v1,_v2} {}
+		#else
+		{ verts[0] = _v0; verts[1] = _v1; verts[2] = _v2; }
+		#endif
+};
+inline triangle_vhandles_t getTriangle(cell_handle_t cell, int i)
+{
+	ASSERT(i >= 0 && i <= 3);
+	if ((i&1) == 0)
+		return triangle_vhandles_t(
+			cell->vertex((i+2)&3),
+			cell->vertex((i+1)&3),
+			cell->vertex((i+3)&3) );
+	return triangle_vhandles_t(
+		cell->vertex((i+1)&3),
+		cell->vertex((i+2)&3),
+		cell->vertex((i+3)&3) );
+}
+
 // Compute the angle between the plane containing the given facet and the cell's circumscribed sphere
 // return cosines of the angle
 float computePlaneSphereAngle(const delaunay_t& Tr, const facet_t& facet)
 {
 	// compute facet normal
-	if (Tr.is_infinite(facet.first->vertex(facet.second))) return 1;
-	const vertex_handle_t vh0(facet.first->vertex((facet.second+1)%4)); if (Tr.is_infinite(vh0)) return 1;
-	const vertex_handle_t vh1(facet.first->vertex((facet.second+2)%4)); if (Tr.is_infinite(vh1)) return 1;
-	const vertex_handle_t vh2(facet.first->vertex((facet.second+3)%4)); if (Tr.is_infinite(vh2)) return 1;
-	const Point3f v0(CGAL2MVS<float>(vh0->point()));
-	const Point3f v1(CGAL2MVS<float>(vh1->point()));
-	const Point3f v2(CGAL2MVS<float>(vh2->point()));
-	const Point3f fn(normalized((v1-v0).cross(v2-v0)));
+	if (Tr.is_infinite(facet.first)) return 1;
+	const triangle_vhandles_t tri(getTriangle(facet.first, facet.second));
+	const Point3f v0(CGAL2MVS<float>(tri.verts[0]->point()));
+	const Point3f v1(CGAL2MVS<float>(tri.verts[1]->point()));
+	const Point3f v2(CGAL2MVS<float>(tri.verts[2]->point()));
+	const Point3f fn((v1-v0).cross(v2-v0));
 
 	// compute the co-tangent to the circumscribed sphere in one of the vertices
 	const Point3f cc(CGAL2MVS<float>(facet.first->circumcenter(Tr.geom_traits())));
-	const Point3f ct(normalized(cc-v0));
+	const Point3f ct(cc-v0);
 
-	return ABS(fn.dot(ct));
-}
-
-// Fetch the facet vertex corresponding to the given index (i),
-// making sure the facet orientation is kept (as in CGAL::Triangulation_3::triangle())
-// return the vertex handle
-inline vertex_handle_t getTriangleVertex(const facet_t& facet, int i)
-{
-	ASSERT(i >= 0 && i < 3);
-	if ((facet.second&1) == 0) {
-		switch (i) {
-		case 0: return facet.first->vertex((facet.second+2)&3);
-		case 1: return facet.first->vertex((facet.second+1)&3);
-		case 2: return facet.first->vertex((facet.second+3)&3);
-		}
-	} else {
-		switch (i) {
-		case 0: return facet.first->vertex((facet.second+1)&3);
-		case 1: return facet.first->vertex((facet.second+2)&3);
-		case 2: return facet.first->vertex((facet.second+3)&3);
-		}
-	}
-	ASSERT("Should never happen!" == NULL);
-	return vertex_handle_t();
+	return ComputeAngle<float,float>(fn.ptr(), ct.ptr());
 }
 } // namespace DELAUNAY
 
@@ -784,7 +754,7 @@ inline vertex_handle_t getTriangleVertex(const facet_t& facet, int i)
 // Next, the score is computed for all the edges of the directed graph composed of points as vertices.
 // Finally, graph-cut algorithm is used to split the tetrahedrons in inside and outside,
 // and the surface is such extracted.
-bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport)
+bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport, unsigned nItersFixNonManifold)
 {
 	using namespace DELAUNAY;
 	ASSERT(!pointcloud.IsEmpty());
@@ -794,6 +764,7 @@ bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport)
 	delaunay_t delaunay;
 	std::vector<cell_info_t> infoCells;
 	std::vector<camera_cell_t> camCells;
+	std::vector<facet_t> hullFacets;
 	{
 		TD_TIMER_STARTD();
 
@@ -830,7 +801,7 @@ bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport)
 				ASSERT(hint != vertex_handle_t());
 			} else {
 				// locate cell containing this point
-				cell_handle_t c(delaunay.locate(p, lt, li, lj, hint->cell()));
+				const cell_handle_t c(delaunay.locate(p, lt, li, lj, hint->cell()));
 				if (lt == delaunay_t::VERTEX) {
 					// duplicate point, nothing to insert,
 					// just update its visibility info
@@ -860,7 +831,7 @@ bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport)
 								break;
 						}
 					}
-					ASSERT(nearest == delaunay.nearest_vertex(p));
+					ASSERT(nearest == delaunay.nearest_vertex(p, hint->cell()));
 					// check if point is far enough to all existing points
 					FOREACHPTR(pViewID, views) {
 						const Image& imageData = images[*pViewID];
@@ -885,13 +856,27 @@ bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport)
 			}
 		});
 		pointcloud.Release();
-		// init cells weights
+		// init cells weights and
+		// loop over all cells and store the finite facet of the infinite cells
 		const size_t numNodes(delaunay.number_of_cells());
 		infoCells.resize(numNodes);
 		memset(&infoCells[0], 0, sizeof(cell_info_t)*numNodes);
 		cell_size_t ciID(0);
-		for (delaunay_t::All_cells_iterator ci=delaunay.all_cells_begin(), eci=delaunay.all_cells_end(); ci!=eci; ++ci, ++ciID)
+		for (delaunay_t::All_cells_iterator ci=delaunay.all_cells_begin(), eci=delaunay.all_cells_end(); ci!=eci; ++ci, ++ciID) {
 			ci->info() = ciID;
+			// skip the finite cells
+			if (!delaunay.is_infinite(ci))
+				continue;
+			// find the finite face
+			for (int f=0; f<4; ++f) {
+				const facet_t facet(ci, f);
+				if (!delaunay.is_infinite(facet)) {
+					// store face
+					hullFacets.push_back(facet);
+					break;
+				}
+			}
+		}
 		// find all cells containing a camera
 		camCells.resize(images.GetSize());
 		FOREACH(i, images) {
@@ -902,7 +887,7 @@ bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport)
 			camera_cell_t& camCell = camCells[i];
 			camCell.cell = delaunay.locate(MVS2CGAL(camera.C));
 			ASSERT(camCell.cell != cell_handle_t());
-			fetchCellFacets<CGAL::POSITIVE>(delaunay, camCell.cell, imageData, camCell.facets);
+			fetchCellFacets<CGAL::POSITIVE>(delaunay, hullFacets, camCell.cell, imageData, camCell.facets);
 			// link all cells contained by the camera to the source
 			for (const facet_t& f: camCell.facets)
 				infoCells[f.first->info()].s = (edge_cap_t)WEIGHT_INF;
@@ -910,7 +895,6 @@ bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport)
 
 		DEBUG_EXTRA("Delaunay tetrahedralization completed: %u points -> %u vertices, %u (+%u) cells, %u (+%u) faces (%s)", indices.size(), delaunay.number_of_vertices(), delaunay.number_of_finite_cells(), delaunay.number_of_cells()-delaunay.number_of_finite_cells(), delaunay.number_of_finite_facets(), delaunay.number_of_facets()-delaunay.number_of_finite_facets(), TD_TIMER_GET_FMT().c_str());
 	}
-
 
 	// for every camera-point ray intersect it with the tetrahedrons and
 	// add alpha_vis(point) to cell's directed edge in the graph
@@ -981,7 +965,7 @@ bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport)
 				const segment_t segEndPoint(MVS2CGAL(endPoint), p);
 				const cell_handle_t endCell(delaunay.locate(segEndPoint.source(), vi->cell()));
 				ASSERT(endCell != cell_handle_t());
-				fetchCellFacets<CGAL::NEGATIVE>(delaunay, endCell, imageData, facets);
+				fetchCellFacets<CGAL::NEGATIVE>(delaunay, hullFacets, endCell, imageData, facets);
 				infoCells[endCell->info()].t += alpha_vis;
 				while (intersect(delaunay, segEndPoint, facets, facets, inter)) {
 					// assign score, weighted by the distance from the point to the intersection
@@ -1109,8 +1093,9 @@ bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport)
 				const bool ciType(graph.IsNodeOnSrcSide(ciID));
 				if (ciType == graph.IsNodeOnSrcSide(cjID)) continue;
 				Mesh::Face& face = mesh.faces.AddEmpty();
+				const triangle_vhandles_t tri(getTriangle(ci, i));
 				for (int v=0; v<3; ++v) {
-					const vertex_handle_t vh(getTriangleVertex(facet_t(ci,i), v));
+					const vertex_handle_t vh(tri.verts[v]);
 					ASSERT(vh->point() == delaunay.triangle(ci,i)[v]);
 					const auto pairItID(mapVertices.insert(std::make_pair(vh.for_compact_container(), (Mesh::VIndex)mesh.vertices.GetSize())));
 					if (pairItID.second)
@@ -1129,7 +1114,7 @@ bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport)
 	}
 
 	// fix non-manifold vertices and edges
-	for (int i=0; i<4; ++i)
+	for (unsigned i=0; i<nItersFixNonManifold; ++i)
 		if (!mesh.FixNonManifold())
 			break;
 	return true;
