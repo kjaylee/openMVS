@@ -195,16 +195,6 @@ protected:
 // construct the mesh out of the dense point cloud using Delaunay tetrahedralization & graph-cut method
 // see "Exploiting Visibility Information in Surface Reconstruction to Preserve Weakly Supported Surfaces", Jancosek and Pajdla, 2015
 namespace DELAUNAY {
-static const float kQual(4.f);
-static const float kInf((float)(INT_MAX/8));
-
-static const float kf(3.f);
-static const float kb(4.f);
-
-static const float kRel(0.1f); // max 0.3
-static const float kAbs(1000.f); // min 500
-static const float kOutl(400.f); // max 700.f
-
 typedef CGAL::Exact_predicates_inexact_constructions_kernel kernel_t;
 typedef kernel_t::Point_3 point_t;
 typedef kernel_t::Vector_3 vector_t;
@@ -224,35 +214,46 @@ struct view_info_t;
 #endif
 struct vert_info_t {
 	typedef edge_cap_t Type;
-	typedef SEACAVE::cList<uint32_t,uint32_t,0,4,uint32_t> view_vec_t;
+	struct view_t {
+		PointCloud::View idxView; // view index
+		Type weight; // point's weight
+		inline view_t() {}
+		inline view_t(PointCloud::View _idxView, Type _weight) : idxView(_idxView), weight(_weight) {}
+		inline bool operator <(const view_t& v) const { return idxView < v.idxView; }
+		inline operator PointCloud::View() const { return idxView; }
+	};
+	typedef SEACAVE::cList<view_t,const view_t&,0,4,uint32_t> view_vec_t;
 	view_vec_t views; // faces' weight from the cell outwards
 	#ifdef DELAUNAY_WEAKSURF
-	union {
-	#endif
-	Type w; // point's weight
-	#ifdef DELAUNAY_WEAKSURF
 	view_info_t* viewsInfo; // each view caches the two faces from the point towards the camera and the end (used only by the weakly supported surfaces)
-	};
-	inline vert_info_t() : viewsInfo(NULL) { ASSERT(w==0); }
+	inline vert_info_t() : viewsInfo(NULL) {}
 	~vert_info_t();
 	void AllocateInfo();
 	#else
-	inline vert_info_t() : w(0) {}
+	inline vert_info_t() {}
 	#endif
-	void Insert(uint32_t viewID) {
-		// insert viewID in increasing order
-		const uint32_t idx((uint32_t)views.FindFirstEqlGreater(viewID));
-		if (idx < views.GetSize() && views[idx] == viewID) {
-			// the new view is already in the array
-			ASSERT(views.FindFirst(viewID) == idx);
-		} else {
-			// the new view is not in the array,
-			// insert it
-			views.InsertAt(idx, viewID);
-			ASSERT(views.IsSorted());
+	void InsertViews(const PointCloud& pc, PointCloud::Index idxPoint) {
+		const PointCloud::ViewArr& _views = pc.pointViews[idxPoint];
+		ASSERT(!_views.IsEmpty());
+		const PointCloud::WeightArr* pweights(pc.pointWeights.IsEmpty() ? NULL : pc.pointWeights.Begin()+idxPoint);
+		ASSERT(pweights == NULL || _views.GetSize() == pweights->GetSize());
+		FOREACH(i, _views) {
+			const PointCloud::View viewID(_views[i]);
+			const PointCloud::Weight weight(pweights ? (*pweights)[i] : PointCloud::Weight(1));
+			// insert viewID in increasing order
+			const uint32_t idx(views.FindFirstEqlGreater(viewID));
+			if (idx < views.GetSize() && views[idx] == viewID) {
+				// the new view is already in the array
+				ASSERT(views.FindFirst(viewID) == idx);
+				// update point's weight
+				views[idx].weight += weight;
+			} else {
+				// the new view is not in the array,
+				// insert it
+				views.InsertAt(idx, view_t(viewID, weight));
+				ASSERT(views.IsSorted());
+			}
 		}
-		// update point's weight
-		w += 1;
 	}
 };
 
@@ -285,7 +286,9 @@ vert_info_t::~vert_info_t() {
 void vert_info_t::AllocateInfo() {
 	ASSERT(!views.IsEmpty());
 	viewsInfo = new view_info_t[views.GetSize()];
+	#ifndef _RELEASE
 	memset(viewsInfo, 0, sizeof(view_info_t)*views.GetSize());
+	#endif
 }
 #endif
 
@@ -331,19 +334,34 @@ inline int orientation(const point_t& a, const point_t& b, const point_t& c, con
 	const double& qx = b.x(); const double& qy = b.y(); const double& qz = b.z();
 	const double& rx = c.x(); const double& ry = c.y(); const double& rz = c.z();
 	const double& sx = p.x(); const double& sy = p.y(); const double& sz = p.z();
-	const double det = CGAL::determinant(
+	#if 0
+	const double det(CGAL::determinant(
 		qx - px, qy - py, qz - pz,
 		rx - px, ry - py, rz - pz,
-		sx - px, sy - py, sz - pz);
-	#if 0
-	if (det > ZERO_TOLERANCE) return CGAL::POSITIVE;
-	if (det < ZERO_TOLERANCE) return CGAL::NEGATIVE;
-	return CGAL::orientation(a, b, c, p);
-	#else
+		sx - px, sy - py, sz - pz));
 	if (det > 0) return CGAL::POSITIVE;
 	if (det < 0) return CGAL::NEGATIVE;
-	return CGAL::COPLANAR;
+	#else
+	const double pqx(qx - px);
+	const double pqy(qy - py);
+	const double pqz(qz - pz);
+	const double prx(rx - px);
+	const double pry(ry - py);
+	const double prz(rz - pz);
+	const double psx(sx - px);
+	const double psy(sy - py);
+	const double psz(sz - pz);
+	const double det(CGAL::determinant(
+		pqx, pqy, pqz,
+		prx, pry, prz,
+		psx, psy, psz));
+	const double max0(MAXF3(ABS(pqx), ABS(pqy), ABS(pqz)));
+	const double max1(MAXF3(ABS(prx), ABS(pry), ABS(prz)));
+	const double eps(5.1107127829973299e-15 * MAXF(max0, max1));
+	if (det >  eps) return CGAL::POSITIVE;
+	if (det < -eps) return CGAL::NEGATIVE;
 	#endif
+	return CGAL::COPLANAR;
 	#endif
 }
 
@@ -452,9 +470,10 @@ int intersect(const triangle_t& t, const segment_t& s, int coplanar[3])
 			// p sees the triangle in counterclockwise order
 			return checkEdges(a,b,c,p,q,coplanar);
 		case CGAL::NEGATIVE:
+			// p sees the triangle in counterclockwise order
 			return checkEdges(a,b,c,p,q,coplanar);
 		default:
-			ASSERT("should not happen" == NULL);
+			break;
 		}
 	case CGAL::NEGATIVE:
 		switch (orientation(a,b,c,q)) {
@@ -470,7 +489,7 @@ int intersect(const triangle_t& t, const segment_t& s, int coplanar[3])
 			// triangle's supporting plane
 			return -1;
 		default:
-			ASSERT("should not happen" == NULL);
+			break;
 		}
 	case CGAL::COPLANAR: // p belongs to the triangle's supporting plane
 		switch (orientation(a,b,c,q)) {
@@ -484,13 +503,12 @@ int intersect(const triangle_t& t, const segment_t& s, int coplanar[3])
 			return 3;
 		case CGAL::NEGATIVE:
 			// q sees the triangle in clockwise order
-			return checkEdges(a,b,c,q,p,coplanar);
+			return checkEdges(a,b,c,p,q,coplanar);
 		default:
-			ASSERT("should not happen" == NULL);
+			break;
 		}
-	default:
-		ASSERT("should not happen" == NULL);
 	}
+	ASSERT("should not happen" == NULL);
 	return -1;
 }
 
@@ -754,7 +772,11 @@ float computePlaneSphereAngle(const delaunay_t& Tr, const facet_t& facet)
 // Next, the score is computed for all the edges of the directed graph composed of points as vertices.
 // Finally, graph-cut algorithm is used to split the tetrahedrons in inside and outside,
 // and the surface is such extracted.
-bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport, unsigned nItersFixNonManifold)
+bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport, unsigned nItersFixNonManifold,
+							float kQual, float kb,
+							float kf, float kRel, float kAbs, float kOutl,
+							float kInf
+)
 {
 	using namespace DELAUNAY;
 	ASSERT(!pointcloud.IsEmpty());
@@ -849,12 +871,7 @@ bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport, unsigne
 				}
 			}
 			// update point visibility info
-			vert_info_t& vi = hint->info();
-			FOREACHPTR(pImageID, views) {
-				ASSERT(images[*pImageID].IsValid());
-				//ASSERT(images[*pImageID].camera.IsInsideProjectionP(CGAL2MVS<REAL>(p), Point2(images[*pImageID].GetSize()))); // due to radial distortion, some points can be slightly outside the image
-				vi.Insert(*pImageID);
-			}
+			hint->info().InsertViews(pointcloud, idx);
 		});
 		pointcloud.Release();
 		// init cells weights and
@@ -903,14 +920,14 @@ bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport, unsigne
 		TD_TIMER_STARTD();
 
 		// estimate the size of the smallest reconstructible object
-		FloatArr dists(0, delaunay.number_of_edges());
+		FloatArr distsSq(0, delaunay.number_of_edges());
 		for (delaunay_t::Finite_edges_iterator ei=delaunay.finite_edges_begin(), eei=delaunay.finite_edges_end(); ei!=eei; ++ei) {
 			const cell_handle_t& c(ei->first);
-			dists.Insert(normSq(CGAL2MVS<float>(c->vertex(ei->second)->point()) - CGAL2MVS<float>(c->vertex(ei->third)->point())));
+			distsSq.Insert(normSq(CGAL2MVS<float>(c->vertex(ei->second)->point()) - CGAL2MVS<float>(c->vertex(ei->third)->point())));
 		}
-		const float sigma(dists.GetMedian()*2);
+		const float sigma(SQRT(distsSq.GetMedian())*2);
 		const float inv2SigmaSq(0.5f/(sigma*sigma));
-		dists.Release();
+		distsSq.Release();
 
 		intersection_t inter;
 		std::vector<facet_t> facets;
@@ -932,14 +949,15 @@ bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport, unsigne
 			vert_info_t& vert(vi->info());
 			if (vert.views.IsEmpty())
 				continue;
-			const edge_cap_t alpha_vis(vert.w);
 			#ifdef DELAUNAY_WEAKSURF
 			vert.AllocateInfo();
 			#endif
 			const point_t& p(vi->point());
 			const Point3f pt(CGAL2MVS<float>(p));
 			FOREACH(v, vert.views) {
-				const uint32_t imageID(vert.views[(vert_info_t::view_vec_t::IDX)v]);
+				const typename vert_info_t::view_t view(vert.views[v]);
+				const uint32_t imageID(view.idxView);
+				const edge_cap_t alpha_vis(view.weight);
 				const Image& imageData = images[imageID];
 				ASSERT(imageData.IsValid());
 				const Camera& camera = imageData.camera;
@@ -955,27 +973,43 @@ bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport, unsigne
 				do {
 					// assign score, weighted by the distance from the point to the intersection
 					const float d(ray.IntersectsDist(getFacetPlane(inter.facet)));
-					infoCells[inter.facet.first->info()].f[inter.facet.second] += alpha_vis*(1.f-EXP(-d*d*inv2SigmaSq));
+					const edge_cap_t w(alpha_vis*(1.f-EXP(-d*d*inv2SigmaSq)));
+					edge_cap_t& f(infoCells[inter.facet.first->info()].f[inter.facet.second]);
+					#ifdef DELAUNAY_USE_OPENMP
+					#pragma omp atomic
+					#endif
+					f += w;
 				} while (intersect(delaunay, segCamPoint, facets, facets, inter));
 				ASSERT(facets.empty() && inter.type == intersection_t::VERTEX && inter.v1 == vi);
 				#ifdef DELAUNAY_WEAKSURF
+				ASSERT(vert.viewsInfo[v].cell2Cam == NULL);
 				vert.viewsInfo[v].cell2Cam = inter.facet.first;
 				#endif
 				// find faces intersected by the endpoint-point segment
-				const Point3f endPoint(pt+vecCamPoint*(invLenCamPoint*sigma*kb));
+				const Point3f endPoint(pt+vecCamPoint*(invLenCamPoint*sigma));
 				const segment_t segEndPoint(MVS2CGAL(endPoint), p);
 				const cell_handle_t endCell(delaunay.locate(segEndPoint.source(), vi->cell()));
 				ASSERT(endCell != cell_handle_t());
 				fetchCellFacets<CGAL::NEGATIVE>(delaunay, hullFacets, endCell, imageData, facets);
-				infoCells[endCell->info()].t += alpha_vis;
+				edge_cap_t& t(infoCells[endCell->info()].t);
+				#ifdef DELAUNAY_USE_OPENMP
+				#pragma omp atomic
+				#endif
+				t += alpha_vis;
 				while (intersect(delaunay, segEndPoint, facets, facets, inter)) {
 					// assign score, weighted by the distance from the point to the intersection
 					const float d(ray.IntersectsDist(getFacetPlane(inter.facet)));
 					const facet_t& mf(delaunay.mirror_facet(inter.facet));
-					infoCells[mf.first->info()].f[mf.second] += alpha_vis*(1.f-EXP(-d*d*inv2SigmaSq));
+					const edge_cap_t w(alpha_vis*(1.f-EXP(-d*d*inv2SigmaSq)));
+					edge_cap_t& f(infoCells[mf.first->info()].f[mf.second]);
+					#ifdef DELAUNAY_USE_OPENMP
+					#pragma omp atomic
+					#endif
+					f += w;
 				}
 				ASSERT(facets.empty() && inter.type == intersection_t::VERTEX && inter.v1 == vi);
 				#ifdef DELAUNAY_WEAKSURF
+				ASSERT(vert.viewsInfo[v].cell2End == NULL);
 				vert.viewsInfo[v].cell2End = inter.facet.first;
 				#endif
 			}
@@ -1041,8 +1075,13 @@ bool Scene::ReconstructMesh(float distInsert, bool bUseFreeSpaceSupport, unsigne
 				// enforce the t-edge weight of the end cell
 				const edge_cap_t epsAbs(beta-gamma);
 				const edge_cap_t epsRel(gamma/beta);
-				if (epsRel < kRel && epsAbs > kAbs && gamma < kOutl)
-					infoCells[inter.ncell->info()].t *= epsAbs;
+				if (epsRel < kRel && epsAbs > kAbs && gamma < kOutl) {
+					edge_cap_t& t(infoCells[inter.ncell->info()].t);
+					#ifdef DELAUNAY_USE_OPENMP
+					#pragma omp atomic
+					#endif
+					t *= epsAbs;
+				}
 			}
 		}
 		DEBUG_ULTIMATE("\tt-edge reinforcement completed in %s", TD_TIMER_GET_FMT().c_str());
