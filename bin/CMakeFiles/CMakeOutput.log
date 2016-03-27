@@ -1,0 +1,211 @@
+The system is: Darwin - 15.3.0 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is AppleClang, found in "/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/3.4.3/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ 
+Build flags: 
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is AppleClang, found in "/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/3.4.3/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_bbeac/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_bbeac.dir/build.make CMakeFiles/cmTC_bbeac.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_bbeac.dir/testCCompiler.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc     -o CMakeFiles/cmTC_bbeac.dir/testCCompiler.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_bbeac
+/opt/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bbeac.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_bbeac.dir/testCCompiler.c.o  -o cmTC_bbeac  
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_d0e79/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_d0e79.dir/build.make CMakeFiles/cmTC_d0e79.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_d0e79.dir/CMakeCCompilerABI.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc     -o CMakeFiles/cmTC_d0e79.dir/CMakeCCompilerABI.c.o   -c /opt/local/share/cmake-3.4/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_d0e79
+/opt/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0e79.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_d0e79.dir/CMakeCCompilerABI.c.o  -o cmTC_d0e79   
+Apple LLVM version 7.0.2 (clang-700.1.81)
+Target: x86_64-apple-darwin15.3.0
+Thread model: posix
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -o cmTC_d0e79 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_d0e79.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-253.9
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+Library search paths:
+	/usr/lib
+	/usr/local/lib
+Framework search paths:
+	/Library/Frameworks/
+	/System/Library/Frameworks/
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/opt/local/bin/gmake" "cmTC_d0e79/fast"]
+  ignore line: [/opt/local/bin/gmake -f CMakeFiles/cmTC_d0e79.dir/build.make CMakeFiles/cmTC_d0e79.dir/build]
+  ignore line: [gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감]
+  ignore line: [Building C object CMakeFiles/cmTC_d0e79.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc     -o CMakeFiles/cmTC_d0e79.dir/CMakeCCompilerABI.c.o   -c /opt/local/share/cmake-3.4/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_d0e79]
+  ignore line: [/opt/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0e79.dir/link.txt --verbose=1]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_d0e79.dir/CMakeCCompilerABI.c.o  -o cmTC_d0e79   ]
+  ignore line: [Apple LLVM version 7.0.2 (clang-700.1.81)]
+  ignore line: [Target: x86_64-apple-darwin15.3.0]
+  ignore line: [Thread model: posix]
+  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -o cmTC_d0e79 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_d0e79.dir/CMakeCCompilerABI.c.o -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.11.0] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_d0e79] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_d0e79.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lSystem] ==> lib [System]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/usr/lib;/usr/local/lib]
+  Framework search paths: [;/Library/Frameworks/;/System/Library/Frameworks/]
+  remove lib [System]
+  collapse lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+  collapse framework dir [/Library/Frameworks/] ==> [/Library/Frameworks]
+  collapse framework dir [/System/Library/Frameworks/] ==> [/System/Library/Frameworks]
+  implicit libs: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a]
+  implicit dirs: [/usr/lib;/usr/local/lib]
+  implicit fwks: [/Library/Frameworks;/System/Library/Frameworks]
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_0e361/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_0e361.dir/build.make CMakeFiles/cmTC_0e361.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_0e361.dir/testCXXCompiler.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++      -o CMakeFiles/cmTC_0e361.dir/testCXXCompiler.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_0e361
+/opt/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e361.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_0e361.dir/testCXXCompiler.cxx.o  -o cmTC_0e361  
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_55a7a/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_55a7a.dir/build.make CMakeFiles/cmTC_55a7a.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_55a7a.dir/CMakeCXXCompilerABI.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++      -o CMakeFiles/cmTC_55a7a.dir/CMakeCXXCompilerABI.cpp.o -c /opt/local/share/cmake-3.4/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_55a7a
+/opt/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_55a7a.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_55a7a.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_55a7a   
+Apple LLVM version 7.0.2 (clang-700.1.81)
+Target: x86_64-apple-darwin15.3.0
+Thread model: posix
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -o cmTC_55a7a -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_55a7a.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-253.9
+configured to support archs: armv6 armv7 armv7s arm64 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+Library search paths:
+	/usr/lib
+	/usr/local/lib
+Framework search paths:
+	/Library/Frameworks/
+	/System/Library/Frameworks/
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/opt/local/bin/gmake" "cmTC_55a7a/fast"]
+  ignore line: [/opt/local/bin/gmake -f CMakeFiles/cmTC_55a7a.dir/build.make CMakeFiles/cmTC_55a7a.dir/build]
+  ignore line: [gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감]
+  ignore line: [Building CXX object CMakeFiles/cmTC_55a7a.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++      -o CMakeFiles/cmTC_55a7a.dir/CMakeCXXCompilerABI.cpp.o -c /opt/local/share/cmake-3.4/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_55a7a]
+  ignore line: [/opt/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_55a7a.dir/link.txt --verbose=1]
+  ignore line: [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_55a7a.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_55a7a   ]
+  ignore line: [Apple LLVM version 7.0.2 (clang-700.1.81)]
+  ignore line: [Target: x86_64-apple-darwin15.3.0]
+  ignore line: [Thread model: posix]
+  link line: [ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld" -demangle -dynamic -arch x86_64 -macosx_version_min 10.11.0 -o cmTC_55a7a -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_55a7a.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld] ==> ignore
+    arg [-demangle] ==> ignore
+    arg [-dynamic] ==> ignore
+    arg [-arch] ==> ignore
+    arg [x86_64] ==> ignore
+    arg [-macosx_version_min] ==> ignore
+    arg [10.11.0] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_55a7a] ==> ignore
+    arg [-search_paths_first] ==> ignore
+    arg [-headerpad_max_install_names] ==> ignore
+    arg [-v] ==> ignore
+    arg [CMakeFiles/cmTC_55a7a.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lc++] ==> lib [c++]
+    arg [-lSystem] ==> lib [System]
+    arg [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a] ==> lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a]
+  Library search paths: [;/usr/lib;/usr/local/lib]
+  Framework search paths: [;/Library/Frameworks/;/System/Library/Frameworks/]
+  remove lib [System]
+  collapse lib [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a] ==> [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a]
+  collapse library dir [/usr/lib] ==> [/usr/lib]
+  collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+  collapse framework dir [/Library/Frameworks/] ==> [/Library/Frameworks]
+  collapse framework dir [/System/Library/Frameworks/] ==> [/System/Library/Frameworks]
+  implicit libs: [c++;/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.0.2/lib/darwin/libclang_rt.osx.a]
+  implicit dirs: [/usr/lib;/usr/local/lib]
+  implicit fwks: [/Library/Frameworks;/System/Library/Frameworks]
+
+
+Performing C++ SOURCE FILE Test COMPILER_HAS_CXX11_FLAG succeded with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_f2732/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_f2732.dir/build.make CMakeFiles/cmTC_f2732.dir/build
+gmake[1]: Entering directory '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_f2732.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -DCOMPILER_HAS_CXX11_FLAG   -std=c++11 -o CMakeFiles/cmTC_f2732.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_f2732
+/opt/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f2732.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -DCOMPILER_HAS_CXX11_FLAG -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_f2732.dir/src.cxx.o  -o cmTC_f2732  
+gmake[1]: Leaving directory '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main() { return 0; }

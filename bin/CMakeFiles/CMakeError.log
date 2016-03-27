@@ -1,0 +1,2498 @@
+Detecting C [-std=c11] compiler features failed to compile with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_35d7d/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_35d7d.dir/build.make CMakeFiles/cmTC_35d7d.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+CMakeFiles/cmTC_35d7d.dir/build.make:64: *** 타겟 패턴에 '%'가 없습니다..  멈춤.
+Makefile:126: 'cmTC_35d7d/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_35d7d/fast] 오류 2
+
+
+
+Detecting CXX [-std=c++14] compiler features failed to compile with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_50849/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_50849.dir/build.make CMakeFiles/cmTC_50849.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+CMakeFiles/cmTC_50849.dir/build.make:64: *** 타겟 패턴에 '%'가 없습니다..  멈춤.
+Makefile:126: 'cmTC_50849/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_50849/fast] 오류 2
+
+
+
+Determining if the include file inttypes.h exists failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_77495/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_77495.dir/build.make CMakeFiles/cmTC_77495.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_77495.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -std=c++11 -O3 -DNDEBUG   -o CMakeFiles/cmTC_77495.dir/CheckIncludeFile.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+error: invalid argument '-std=c++11' not allowed with 'C/ObjC'
+CMakeFiles/cmTC_77495.dir/build.make:65: 'CMakeFiles/cmTC_77495.dir/CheckIncludeFile.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_77495.dir/CheckIncludeFile.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_77495/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_77495/fast] 오류 2
+
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_46a82/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_46a82.dir/build.make CMakeFiles/cmTC_46a82.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_46a82.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -O3 -DNDEBUG   -o CMakeFiles/cmTC_46a82.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_46a82.dir/build.make:65: 'CMakeFiles/cmTC_46a82.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_46a82.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_46a82/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_46a82/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_153ba/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_153ba.dir/build.make CMakeFiles/cmTC_153ba.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_153ba.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -fopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_153ba.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_153ba.dir/build.make:65: 'CMakeFiles/cmTC_153ba.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_153ba.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_153ba/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_153ba/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_c3c93/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_c3c93.dir/build.make CMakeFiles/cmTC_c3c93.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_c3c93.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED /openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_c3c93.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: no such file or directory: '/openmp'
+CMakeFiles/cmTC_c3c93.dir/build.make:65: 'CMakeFiles/cmTC_c3c93.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_c3c93.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_c3c93/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_c3c93/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_b32bd/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_b32bd.dir/build.make CMakeFiles/cmTC_b32bd.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_b32bd.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -Qopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_b32bd.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: unknown argument: '-Qopenmp'
+CMakeFiles/cmTC_b32bd.dir/build.make:65: 'CMakeFiles/cmTC_b32bd.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_b32bd.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_b32bd/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_b32bd/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_54ba6/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_54ba6.dir/build.make CMakeFiles/cmTC_54ba6.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_54ba6.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_54ba6.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_54ba6.dir/build.make:65: 'CMakeFiles/cmTC_54ba6.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_54ba6.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_54ba6/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_54ba6/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_ae562/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_ae562.dir/build.make CMakeFiles/cmTC_ae562.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_ae562.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -xopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_ae562.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: language not recognized: 'openmp'
+clang: warning: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c: 'linker' input unused
+CMakeFiles/cmTC_ae562.dir/build.make:65: 'CMakeFiles/cmTC_ae562.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_ae562.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_ae562/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_ae562/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_4d047/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_4d047.dir/build.make CMakeFiles/cmTC_4d047.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_4d047.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED +Oopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_4d047.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: no such file or directory: '+Oopenmp'
+CMakeFiles/cmTC_4d047.dir/build.make:65: 'CMakeFiles/cmTC_4d047.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_4d047.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_4d047/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_4d047/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_a8f12/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_a8f12.dir/build.make CMakeFiles/cmTC_a8f12.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_a8f12.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -qsmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_a8f12.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: unknown argument: '-qsmp'
+CMakeFiles/cmTC_a8f12.dir/build.make:65: 'CMakeFiles/cmTC_a8f12.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_a8f12.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_a8f12/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_a8f12/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_514b4/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_514b4.dir/build.make CMakeFiles/cmTC_514b4.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_514b4.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -mp -O3 -DNDEBUG   -o CMakeFiles/cmTC_514b4.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: unknown argument: '-mp'
+CMakeFiles/cmTC_514b4.dir/build.make:65: 'CMakeFiles/cmTC_514b4.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_514b4.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_514b4/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_514b4/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_c8011/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_c8011.dir/build.make CMakeFiles/cmTC_c8011.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_c8011.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -O3 -DNDEBUG   -o CMakeFiles/cmTC_c8011.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_c8011.dir/build.make:65: 'CMakeFiles/cmTC_c8011.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_c8011.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_c8011/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_c8011/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_ee8fa/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_ee8fa.dir/build.make CMakeFiles/cmTC_ee8fa.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_ee8fa.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -fopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_ee8fa.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_ee8fa.dir/build.make:65: 'CMakeFiles/cmTC_ee8fa.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_ee8fa.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_ee8fa/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_ee8fa/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_6236f/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_6236f.dir/build.make CMakeFiles/cmTC_6236f.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_6236f.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED /openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_6236f.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: no such file or directory: '/openmp'
+CMakeFiles/cmTC_6236f.dir/build.make:65: 'CMakeFiles/cmTC_6236f.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_6236f.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_6236f/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_6236f/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_596e9/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_596e9.dir/build.make CMakeFiles/cmTC_596e9.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_596e9.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -Qopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_596e9.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-Qopenmp'
+CMakeFiles/cmTC_596e9.dir/build.make:65: 'CMakeFiles/cmTC_596e9.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_596e9.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_596e9/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_596e9/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_2afad/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_2afad.dir/build.make CMakeFiles/cmTC_2afad.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_2afad.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_2afad.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_2afad.dir/build.make:65: 'CMakeFiles/cmTC_2afad.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_2afad.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_2afad/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_2afad/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_0c10c/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_0c10c.dir/build.make CMakeFiles/cmTC_0c10c.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_0c10c.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -xopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_0c10c.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: language not recognized: 'openmp'
+clang: warning: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx: 'linker' input unused
+CMakeFiles/cmTC_0c10c.dir/build.make:65: 'CMakeFiles/cmTC_0c10c.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_0c10c.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_0c10c/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_0c10c/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_209c2/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_209c2.dir/build.make CMakeFiles/cmTC_209c2.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_209c2.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED +Oopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_209c2.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: no such file or directory: '+Oopenmp'
+CMakeFiles/cmTC_209c2.dir/build.make:65: 'CMakeFiles/cmTC_209c2.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_209c2.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_209c2/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_209c2/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_b2ae8/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_b2ae8.dir/build.make CMakeFiles/cmTC_b2ae8.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_b2ae8.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -qsmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_b2ae8.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-qsmp'
+CMakeFiles/cmTC_b2ae8.dir/build.make:65: 'CMakeFiles/cmTC_b2ae8.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_b2ae8.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_b2ae8/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_b2ae8/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_cabdd/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_cabdd.dir/build.make CMakeFiles/cmTC_cabdd.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_cabdd.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -mp -O3 -DNDEBUG   -o CMakeFiles/cmTC_cabdd.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-mp'
+CMakeFiles/cmTC_cabdd.dir/build.make:65: 'CMakeFiles/cmTC_cabdd.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_cabdd.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_cabdd/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_cabdd/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_ad8d7/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_ad8d7.dir/build.make CMakeFiles/cmTC_ad8d7.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_ad8d7.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -fPIC -std=c++11 -O3 -DNDEBUG   -o CMakeFiles/cmTC_ad8d7.dir/CheckIncludeFile.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+error: invalid argument '-std=c++11' not allowed with 'C/ObjC'
+CMakeFiles/cmTC_ad8d7.dir/build.make:65: 'CMakeFiles/cmTC_ad8d7.dir/CheckIncludeFile.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_ad8d7.dir/CheckIncludeFile.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_ad8d7/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_ad8d7/fast] 오류 2
+
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_39d8f/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_39d8f.dir/build.make CMakeFiles/cmTC_39d8f.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_39d8f.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -O3 -DNDEBUG   -o CMakeFiles/cmTC_39d8f.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_39d8f.dir/build.make:65: 'CMakeFiles/cmTC_39d8f.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_39d8f.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_39d8f/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_39d8f/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_4add7/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_4add7.dir/build.make CMakeFiles/cmTC_4add7.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_4add7.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -fopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_4add7.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_4add7.dir/build.make:65: 'CMakeFiles/cmTC_4add7.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_4add7.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_4add7/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_4add7/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_fcff6/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_fcff6.dir/build.make CMakeFiles/cmTC_fcff6.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_fcff6.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED /openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_fcff6.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: no such file or directory: '/openmp'
+CMakeFiles/cmTC_fcff6.dir/build.make:65: 'CMakeFiles/cmTC_fcff6.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_fcff6.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_fcff6/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_fcff6/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_09921/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_09921.dir/build.make CMakeFiles/cmTC_09921.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_09921.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -Qopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_09921.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: unknown argument: '-Qopenmp'
+CMakeFiles/cmTC_09921.dir/build.make:65: 'CMakeFiles/cmTC_09921.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_09921.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_09921/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_09921/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_d116f/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_d116f.dir/build.make CMakeFiles/cmTC_d116f.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_d116f.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_d116f.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_d116f.dir/build.make:65: 'CMakeFiles/cmTC_d116f.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_d116f.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_d116f/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_d116f/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_2d600/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_2d600.dir/build.make CMakeFiles/cmTC_2d600.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_2d600.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -xopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_2d600.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: language not recognized: 'openmp'
+clang: warning: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c: 'linker' input unused
+CMakeFiles/cmTC_2d600.dir/build.make:65: 'CMakeFiles/cmTC_2d600.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_2d600.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_2d600/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_2d600/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_37b9b/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_37b9b.dir/build.make CMakeFiles/cmTC_37b9b.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_37b9b.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED +Oopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_37b9b.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: no such file or directory: '+Oopenmp'
+CMakeFiles/cmTC_37b9b.dir/build.make:65: 'CMakeFiles/cmTC_37b9b.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_37b9b.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_37b9b/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_37b9b/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_966b7/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_966b7.dir/build.make CMakeFiles/cmTC_966b7.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_966b7.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -qsmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_966b7.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: unknown argument: '-qsmp'
+CMakeFiles/cmTC_966b7.dir/build.make:65: 'CMakeFiles/cmTC_966b7.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_966b7.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_966b7/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_966b7/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_3ca88/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_3ca88.dir/build.make CMakeFiles/cmTC_3ca88.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_3ca88.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -mp -O3 -DNDEBUG   -o CMakeFiles/cmTC_3ca88.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: unknown argument: '-mp'
+CMakeFiles/cmTC_3ca88.dir/build.make:65: 'CMakeFiles/cmTC_3ca88.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_3ca88.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_3ca88/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_3ca88/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_7e2c4/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_7e2c4.dir/build.make CMakeFiles/cmTC_7e2c4.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_7e2c4.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -O3 -DNDEBUG   -o CMakeFiles/cmTC_7e2c4.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_7e2c4.dir/build.make:65: 'CMakeFiles/cmTC_7e2c4.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_7e2c4.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_7e2c4/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_7e2c4/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_dfb9a/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_dfb9a.dir/build.make CMakeFiles/cmTC_dfb9a.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_dfb9a.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -fopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_dfb9a.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_dfb9a.dir/build.make:65: 'CMakeFiles/cmTC_dfb9a.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_dfb9a.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_dfb9a/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_dfb9a/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_e3716/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_e3716.dir/build.make CMakeFiles/cmTC_e3716.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_e3716.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED /openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_e3716.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: no such file or directory: '/openmp'
+CMakeFiles/cmTC_e3716.dir/build.make:65: 'CMakeFiles/cmTC_e3716.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_e3716.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_e3716/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_e3716/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_6446b/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_6446b.dir/build.make CMakeFiles/cmTC_6446b.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_6446b.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -Qopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_6446b.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-Qopenmp'
+CMakeFiles/cmTC_6446b.dir/build.make:65: 'CMakeFiles/cmTC_6446b.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_6446b.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_6446b/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_6446b/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_09782/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_09782.dir/build.make CMakeFiles/cmTC_09782.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_09782.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_09782.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_09782.dir/build.make:65: 'CMakeFiles/cmTC_09782.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_09782.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_09782/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_09782/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_e73ca/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_e73ca.dir/build.make CMakeFiles/cmTC_e73ca.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_e73ca.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -xopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_e73ca.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: language not recognized: 'openmp'
+clang: warning: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx: 'linker' input unused
+CMakeFiles/cmTC_e73ca.dir/build.make:65: 'CMakeFiles/cmTC_e73ca.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_e73ca.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_e73ca/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_e73ca/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_0a4ee/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_0a4ee.dir/build.make CMakeFiles/cmTC_0a4ee.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_0a4ee.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED +Oopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_0a4ee.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: no such file or directory: '+Oopenmp'
+CMakeFiles/cmTC_0a4ee.dir/build.make:65: 'CMakeFiles/cmTC_0a4ee.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_0a4ee.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_0a4ee/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_0a4ee/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_4b166/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_4b166.dir/build.make CMakeFiles/cmTC_4b166.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_4b166.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -qsmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_4b166.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-qsmp'
+CMakeFiles/cmTC_4b166.dir/build.make:65: 'CMakeFiles/cmTC_4b166.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_4b166.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_4b166/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_4b166/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_ec234/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_ec234.dir/build.make CMakeFiles/cmTC_ec234.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_ec234.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -mp -O3 -DNDEBUG   -o CMakeFiles/cmTC_ec234.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-mp'
+CMakeFiles/cmTC_ec234.dir/build.make:65: 'CMakeFiles/cmTC_ec234.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_ec234.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_ec234/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_ec234/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_69b32/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_69b32.dir/build.make CMakeFiles/cmTC_69b32.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_69b32.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -O3 -DNDEBUG   -o CMakeFiles/cmTC_69b32.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_69b32.dir/build.make:65: 'CMakeFiles/cmTC_69b32.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_69b32.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_69b32/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_69b32/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_8a9cd/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_8a9cd.dir/build.make CMakeFiles/cmTC_8a9cd.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_8a9cd.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -fopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_8a9cd.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_8a9cd.dir/build.make:65: 'CMakeFiles/cmTC_8a9cd.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_8a9cd.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_8a9cd/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_8a9cd/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_cc901/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_cc901.dir/build.make CMakeFiles/cmTC_cc901.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_cc901.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED /openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_cc901.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: no such file or directory: '/openmp'
+CMakeFiles/cmTC_cc901.dir/build.make:65: 'CMakeFiles/cmTC_cc901.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_cc901.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_cc901/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_cc901/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_221d4/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_221d4.dir/build.make CMakeFiles/cmTC_221d4.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_221d4.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -Qopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_221d4.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: unknown argument: '-Qopenmp'
+CMakeFiles/cmTC_221d4.dir/build.make:65: 'CMakeFiles/cmTC_221d4.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_221d4.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_221d4/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_221d4/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_049a2/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_049a2.dir/build.make CMakeFiles/cmTC_049a2.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_049a2.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_049a2.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_049a2.dir/build.make:65: 'CMakeFiles/cmTC_049a2.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_049a2.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_049a2/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_049a2/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_d21ab/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_d21ab.dir/build.make CMakeFiles/cmTC_d21ab.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_d21ab.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -xopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_d21ab.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: language not recognized: 'openmp'
+clang: warning: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c: 'linker' input unused
+CMakeFiles/cmTC_d21ab.dir/build.make:65: 'CMakeFiles/cmTC_d21ab.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_d21ab.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_d21ab/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_d21ab/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_54388/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_54388.dir/build.make CMakeFiles/cmTC_54388.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_54388.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED +Oopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_54388.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: no such file or directory: '+Oopenmp'
+CMakeFiles/cmTC_54388.dir/build.make:65: 'CMakeFiles/cmTC_54388.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_54388.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_54388/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_54388/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_be97a/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_be97a.dir/build.make CMakeFiles/cmTC_be97a.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_be97a.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -qsmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_be97a.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: unknown argument: '-qsmp'
+CMakeFiles/cmTC_be97a.dir/build.make:65: 'CMakeFiles/cmTC_be97a.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_be97a.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_be97a/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_be97a/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_2e947/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_2e947.dir/build.make CMakeFiles/cmTC_2e947.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_2e947.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -mp -O3 -DNDEBUG   -o CMakeFiles/cmTC_2e947.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: unknown argument: '-mp'
+CMakeFiles/cmTC_2e947.dir/build.make:65: 'CMakeFiles/cmTC_2e947.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_2e947.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_2e947/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_2e947/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_c86cf/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_c86cf.dir/build.make CMakeFiles/cmTC_c86cf.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_c86cf.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -O3 -DNDEBUG   -o CMakeFiles/cmTC_c86cf.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_c86cf.dir/build.make:65: 'CMakeFiles/cmTC_c86cf.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_c86cf.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_c86cf/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_c86cf/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_3a9ea/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_3a9ea.dir/build.make CMakeFiles/cmTC_3a9ea.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_3a9ea.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -fopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_3a9ea.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_3a9ea.dir/build.make:65: 'CMakeFiles/cmTC_3a9ea.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_3a9ea.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_3a9ea/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_3a9ea/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_01e69/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_01e69.dir/build.make CMakeFiles/cmTC_01e69.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_01e69.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED /openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_01e69.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: no such file or directory: '/openmp'
+CMakeFiles/cmTC_01e69.dir/build.make:65: 'CMakeFiles/cmTC_01e69.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_01e69.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_01e69/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_01e69/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_275bd/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_275bd.dir/build.make CMakeFiles/cmTC_275bd.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_275bd.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -Qopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_275bd.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-Qopenmp'
+CMakeFiles/cmTC_275bd.dir/build.make:65: 'CMakeFiles/cmTC_275bd.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_275bd.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_275bd/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_275bd/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_c235d/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_c235d.dir/build.make CMakeFiles/cmTC_c235d.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_c235d.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_c235d.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_c235d.dir/build.make:65: 'CMakeFiles/cmTC_c235d.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_c235d.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_c235d/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_c235d/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_75044/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_75044.dir/build.make CMakeFiles/cmTC_75044.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_75044.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -xopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_75044.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: language not recognized: 'openmp'
+clang: warning: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx: 'linker' input unused
+CMakeFiles/cmTC_75044.dir/build.make:65: 'CMakeFiles/cmTC_75044.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_75044.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_75044/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_75044/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_81d4e/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_81d4e.dir/build.make CMakeFiles/cmTC_81d4e.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_81d4e.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED +Oopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_81d4e.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: no such file or directory: '+Oopenmp'
+CMakeFiles/cmTC_81d4e.dir/build.make:65: 'CMakeFiles/cmTC_81d4e.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_81d4e.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_81d4e/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_81d4e/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_94f1d/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_94f1d.dir/build.make CMakeFiles/cmTC_94f1d.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_94f1d.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -qsmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_94f1d.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-qsmp'
+CMakeFiles/cmTC_94f1d.dir/build.make:65: 'CMakeFiles/cmTC_94f1d.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_94f1d.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_94f1d/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_94f1d/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_29f79/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_29f79.dir/build.make CMakeFiles/cmTC_29f79.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_29f79.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -mp -O3 -DNDEBUG   -o CMakeFiles/cmTC_29f79.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-mp'
+CMakeFiles/cmTC_29f79.dir/build.make:65: 'CMakeFiles/cmTC_29f79.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_29f79.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_29f79/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_29f79/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_aa0cd/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_aa0cd.dir/build.make CMakeFiles/cmTC_aa0cd.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_aa0cd.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -O3 -DNDEBUG   -o CMakeFiles/cmTC_aa0cd.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_aa0cd.dir/build.make:65: 'CMakeFiles/cmTC_aa0cd.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_aa0cd.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_aa0cd/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_aa0cd/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_11d9e/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_11d9e.dir/build.make CMakeFiles/cmTC_11d9e.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_11d9e.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -fopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_11d9e.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_11d9e.dir/build.make:65: 'CMakeFiles/cmTC_11d9e.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_11d9e.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_11d9e/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_11d9e/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_36955/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_36955.dir/build.make CMakeFiles/cmTC_36955.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_36955.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED /openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_36955.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: no such file or directory: '/openmp'
+CMakeFiles/cmTC_36955.dir/build.make:65: 'CMakeFiles/cmTC_36955.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_36955.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_36955/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_36955/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_46bb7/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_46bb7.dir/build.make CMakeFiles/cmTC_46bb7.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_46bb7.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -Qopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_46bb7.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: unknown argument: '-Qopenmp'
+CMakeFiles/cmTC_46bb7.dir/build.make:65: 'CMakeFiles/cmTC_46bb7.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_46bb7.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_46bb7/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_46bb7/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_53623/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_53623.dir/build.make CMakeFiles/cmTC_53623.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_53623.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_53623.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_53623.dir/build.make:65: 'CMakeFiles/cmTC_53623.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_53623.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_53623/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_53623/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_f24fc/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_f24fc.dir/build.make CMakeFiles/cmTC_f24fc.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_f24fc.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -xopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_f24fc.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: language not recognized: 'openmp'
+clang: warning: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c: 'linker' input unused
+CMakeFiles/cmTC_f24fc.dir/build.make:65: 'CMakeFiles/cmTC_f24fc.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_f24fc.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_f24fc/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_f24fc/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_e4267/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_e4267.dir/build.make CMakeFiles/cmTC_e4267.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_e4267.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED +Oopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_e4267.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: no such file or directory: '+Oopenmp'
+CMakeFiles/cmTC_e4267.dir/build.make:65: 'CMakeFiles/cmTC_e4267.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_e4267.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_e4267/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_e4267/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_b41f0/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_b41f0.dir/build.make CMakeFiles/cmTC_b41f0.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_b41f0.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -qsmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_b41f0.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: unknown argument: '-qsmp'
+CMakeFiles/cmTC_b41f0.dir/build.make:65: 'CMakeFiles/cmTC_b41f0.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_b41f0.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_b41f0/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_b41f0/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_ff4da/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_ff4da.dir/build.make CMakeFiles/cmTC_ff4da.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_ff4da.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -mp -O3 -DNDEBUG   -o CMakeFiles/cmTC_ff4da.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: unknown argument: '-mp'
+CMakeFiles/cmTC_ff4da.dir/build.make:65: 'CMakeFiles/cmTC_ff4da.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_ff4da.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_ff4da/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_ff4da/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_05ff2/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_05ff2.dir/build.make CMakeFiles/cmTC_05ff2.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_05ff2.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -O3 -DNDEBUG   -o CMakeFiles/cmTC_05ff2.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_05ff2.dir/build.make:65: 'CMakeFiles/cmTC_05ff2.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_05ff2.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_05ff2/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_05ff2/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_6d038/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_6d038.dir/build.make CMakeFiles/cmTC_6d038.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_6d038.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -fopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_6d038.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_6d038.dir/build.make:65: 'CMakeFiles/cmTC_6d038.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_6d038.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_6d038/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_6d038/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_9f0b3/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_9f0b3.dir/build.make CMakeFiles/cmTC_9f0b3.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_9f0b3.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED /openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_9f0b3.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: no such file or directory: '/openmp'
+CMakeFiles/cmTC_9f0b3.dir/build.make:65: 'CMakeFiles/cmTC_9f0b3.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_9f0b3.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_9f0b3/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_9f0b3/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_d2257/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_d2257.dir/build.make CMakeFiles/cmTC_d2257.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_d2257.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -Qopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_d2257.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-Qopenmp'
+CMakeFiles/cmTC_d2257.dir/build.make:65: 'CMakeFiles/cmTC_d2257.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_d2257.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_d2257/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_d2257/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_0fe24/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_0fe24.dir/build.make CMakeFiles/cmTC_0fe24.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_0fe24.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_0fe24.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_0fe24.dir/build.make:65: 'CMakeFiles/cmTC_0fe24.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_0fe24.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_0fe24/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_0fe24/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_c0044/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_c0044.dir/build.make CMakeFiles/cmTC_c0044.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_c0044.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -xopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_c0044.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: language not recognized: 'openmp'
+clang: warning: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx: 'linker' input unused
+CMakeFiles/cmTC_c0044.dir/build.make:65: 'CMakeFiles/cmTC_c0044.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_c0044.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_c0044/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_c0044/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_994c4/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_994c4.dir/build.make CMakeFiles/cmTC_994c4.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_994c4.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED +Oopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_994c4.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: no such file or directory: '+Oopenmp'
+CMakeFiles/cmTC_994c4.dir/build.make:65: 'CMakeFiles/cmTC_994c4.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_994c4.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_994c4/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_994c4/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_47876/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_47876.dir/build.make CMakeFiles/cmTC_47876.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_47876.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -qsmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_47876.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-qsmp'
+CMakeFiles/cmTC_47876.dir/build.make:65: 'CMakeFiles/cmTC_47876.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_47876.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_47876/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_47876/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_7f466/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_7f466.dir/build.make CMakeFiles/cmTC_7f466.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_7f466.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -mp -O3 -DNDEBUG   -o CMakeFiles/cmTC_7f466.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-mp'
+CMakeFiles/cmTC_7f466.dir/build.make:65: 'CMakeFiles/cmTC_7f466.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_7f466.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_7f466/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_7f466/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_4e025/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_4e025.dir/build.make CMakeFiles/cmTC_4e025.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_4e025.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -O3 -DNDEBUG   -o CMakeFiles/cmTC_4e025.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_4e025.dir/build.make:65: 'CMakeFiles/cmTC_4e025.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_4e025.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_4e025/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_4e025/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_0d968/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_0d968.dir/build.make CMakeFiles/cmTC_0d968.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_0d968.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -fopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_0d968.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_0d968.dir/build.make:65: 'CMakeFiles/cmTC_0d968.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_0d968.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_0d968/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_0d968/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_3c9d8/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_3c9d8.dir/build.make CMakeFiles/cmTC_3c9d8.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_3c9d8.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED /openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_3c9d8.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: no such file or directory: '/openmp'
+CMakeFiles/cmTC_3c9d8.dir/build.make:65: 'CMakeFiles/cmTC_3c9d8.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_3c9d8.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_3c9d8/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_3c9d8/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_d279e/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_d279e.dir/build.make CMakeFiles/cmTC_d279e.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_d279e.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -Qopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_d279e.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: unknown argument: '-Qopenmp'
+CMakeFiles/cmTC_d279e.dir/build.make:65: 'CMakeFiles/cmTC_d279e.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_d279e.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_d279e/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_d279e/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_67874/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_67874.dir/build.make CMakeFiles/cmTC_67874.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_67874.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_67874.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_67874.dir/build.make:65: 'CMakeFiles/cmTC_67874.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_67874.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_67874/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_67874/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_d51a6/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_d51a6.dir/build.make CMakeFiles/cmTC_d51a6.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_d51a6.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -xopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_d51a6.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: language not recognized: 'openmp'
+clang: warning: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c: 'linker' input unused
+CMakeFiles/cmTC_d51a6.dir/build.make:65: 'CMakeFiles/cmTC_d51a6.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_d51a6.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_d51a6/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_d51a6/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_5af35/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_5af35.dir/build.make CMakeFiles/cmTC_5af35.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_5af35.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED +Oopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_5af35.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: no such file or directory: '+Oopenmp'
+CMakeFiles/cmTC_5af35.dir/build.make:65: 'CMakeFiles/cmTC_5af35.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_5af35.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_5af35/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_5af35/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_6eb43/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_6eb43.dir/build.make CMakeFiles/cmTC_6eb43.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_6eb43.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -qsmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_6eb43.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: unknown argument: '-qsmp'
+CMakeFiles/cmTC_6eb43.dir/build.make:65: 'CMakeFiles/cmTC_6eb43.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_6eb43.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_6eb43/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_6eb43/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_f1f75/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_f1f75.dir/build.make CMakeFiles/cmTC_f1f75.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building C object CMakeFiles/cmTC_f1f75.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -stdlib=libc++ -DOpenMP_FLAG_DETECTED -mp -O3 -DNDEBUG   -o CMakeFiles/cmTC_f1f75.dir/src.c.o   -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.c
+clang: error: unknown argument: '-mp'
+CMakeFiles/cmTC_f1f75.dir/build.make:65: 'CMakeFiles/cmTC_f1f75.dir/src.c.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_f1f75.dir/src.c.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_f1f75/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_f1f75/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_7344b/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_7344b.dir/build.make CMakeFiles/cmTC_7344b.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_7344b.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -O3 -DNDEBUG   -o CMakeFiles/cmTC_7344b.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_7344b.dir/build.make:65: 'CMakeFiles/cmTC_7344b.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_7344b.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_7344b/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_7344b/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_8473a/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_8473a.dir/build.make CMakeFiles/cmTC_8473a.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_8473a.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -fopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_8473a.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_8473a.dir/build.make:65: 'CMakeFiles/cmTC_8473a.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_8473a.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_8473a/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_8473a/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_ca7d0/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_ca7d0.dir/build.make CMakeFiles/cmTC_ca7d0.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_ca7d0.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED /openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_ca7d0.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: no such file or directory: '/openmp'
+CMakeFiles/cmTC_ca7d0.dir/build.make:65: 'CMakeFiles/cmTC_ca7d0.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_ca7d0.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_ca7d0/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_ca7d0/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_e4fcb/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_e4fcb.dir/build.make CMakeFiles/cmTC_e4fcb.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_e4fcb.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -Qopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_e4fcb.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-Qopenmp'
+CMakeFiles/cmTC_e4fcb.dir/build.make:65: 'CMakeFiles/cmTC_e4fcb.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_e4fcb.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_e4fcb/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_e4fcb/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_bf327/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_bf327.dir/build.make CMakeFiles/cmTC_bf327.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_bf327.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -openmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_bf327.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^
+1 error generated.
+CMakeFiles/cmTC_bf327.dir/build.make:65: 'CMakeFiles/cmTC_bf327.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_bf327.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_bf327/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_bf327/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_8119b/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_8119b.dir/build.make CMakeFiles/cmTC_8119b.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_8119b.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -xopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_8119b.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: language not recognized: 'openmp'
+clang: warning: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx: 'linker' input unused
+CMakeFiles/cmTC_8119b.dir/build.make:65: 'CMakeFiles/cmTC_8119b.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_8119b.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_8119b/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_8119b/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_5f2cd/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_5f2cd.dir/build.make CMakeFiles/cmTC_5f2cd.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_5f2cd.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED +Oopenmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_5f2cd.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: no such file or directory: '+Oopenmp'
+CMakeFiles/cmTC_5f2cd.dir/build.make:65: 'CMakeFiles/cmTC_5f2cd.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_5f2cd.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_5f2cd/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_5f2cd/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_b2f0e/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_b2f0e.dir/build.make CMakeFiles/cmTC_b2f0e.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_b2f0e.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -qsmp -O3 -DNDEBUG   -o CMakeFiles/cmTC_b2f0e.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-qsmp'
+CMakeFiles/cmTC_b2f0e.dir/build.make:65: 'CMakeFiles/cmTC_b2f0e.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_b2f0e.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_b2f0e/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_b2f0e/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED failed with the following output:
+Change Dir: /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/opt/local/bin/gmake" "cmTC_7c13d/fast"
+/opt/local/bin/gmake -f CMakeFiles/cmTC_7c13d.dir/build.make CMakeFiles/cmTC_7c13d.dir/build
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 들어감
+Building CXX object CMakeFiles/cmTC_7c13d.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++     -std=c++11 -stdlib=libc++ -DOpenMP_FLAG_DETECTED -mp -O3 -DNDEBUG   -o CMakeFiles/cmTC_7c13d.dir/src.cxx.o -c /Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-mp'
+CMakeFiles/cmTC_7c13d.dir/build.make:65: 'CMakeFiles/cmTC_7c13d.dir/src.cxx.o' 타겟에 대한 명령이 실패했습니다
+gmake[1]: *** [CMakeFiles/cmTC_7c13d.dir/src.cxx.o] 오류 1
+gmake[1]: 디렉터리 '/Users/kjaylee/Documents/3dScanner/kjaylee:openMVS/bin/CMakeFiles/CMakeTmp' 나감
+Makefile:126: 'cmTC_7c13d/fast' 타겟에 대한 명령이 실패했습니다
+gmake: *** [cmTC_7c13d/fast] 오류 2
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
